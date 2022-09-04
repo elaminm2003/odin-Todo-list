@@ -58,6 +58,7 @@ header{
 
 }
 
+
 .to-dos {
     background: white;
     box-shadow: 0px 10px 20px rgba(64, 68, 201, 0.2);
@@ -162,10 +163,36 @@ button{
     cursor: pointer;
 }
 
-.folder-selected{
+
+
+.tasks-container{
+    background: white;
+    box-shadow: 0px 10px 20px rgba(64, 68, 201, 0.2);
+    border-radius: 30px;
+    margin: 20px 50px;
+    font-size: 20px;
+    height: auto;
+    min-height: 200px;
+    max-height: 90vh;
+    width: 30vw;
+    text-align: center;
+    overflow: scroll;
+    cursor: pointer;
+}
+
+.task{
+    display: flex;
+    margin: 30px 40px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.task-selected{
     display: flex;
     background-color: lightskyblue;
-    margin: 30px 40px;
+    margin: 30px 25px;
     padding: 10px;
     border-radius: 5px;
     text-align: right;
@@ -180,6 +207,8 @@ button{
     border-radius: 5px;
     text-align: right;
     cursor: pointer;
+    background: white;
+    box-shadow: 0px 10px 20px rgba(64, 68, 201, 0.2);
     
 }
 
@@ -187,12 +216,78 @@ button{
     border: 2px solid lightskyblue;
 }
 
+.folder-selected{
+    display: flex;
+    background-color: lightskyblue;
+    margin: 30px 40px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: right;
+    cursor: pointer;
+    box-shadow: 5px 5px rgb(135, 206, 250,0.2); 
+}
+
 .delete-img{
     margin-left: auto;
     display: block;
-    fill: yellow;
     width: 2vw;
     height: 20px;
     margin-top: 2.5px;
 }
+
+.task-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50%;
+    margin-left: auto; 
+}
+
+.task-date{
+    width: 30%;
+    font-size: 18px;
+    margin: auto;
+
+}
+
+.task-urgency{
+    font-size: 18px;
+    width: 30%;
+    margin: auto 5px;
+}
+
+.edit-img{
+    margin: auto 5px;
+    display: block;
+    width: 2vw;
+    height: auto;
+    min-height: 20px;
+}
+
+.task-name{
+    margin: auto 0;
+    text-align: left;
+}
+
+.task-delete-img{
+    margin: auto 5px;
+    display: block;
+    width: 2vw;
+    height: auto;
+    min-height: 20px;
+
+}
+
+.task{
+    display: flex;
+    background-color: white;
+    margin: 30px 25px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: right;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(64, 68, 201, 0.2);
+}
+
+
 

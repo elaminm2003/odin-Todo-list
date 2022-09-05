@@ -8,12 +8,29 @@ export function task(){
     let taskDate = document.querySelector('#duedate')
     let urgency = document.querySelector('#urgency')
     let mainTasksDiv = document.querySelector('.tasks')
+    let main = document.getElementById('main')
 
 
     //eventListeners
     addBtn.addEventListener('click', () => {
         appendTask()
     })
+    //delete Button eventlistener
+    mainTasksDiv.addEventListener('click', function (e) {
+        if (e.target.classList.contains('task-delete-img')){
+            e.target.parentElement.parentElement.remove()
+        }
+    })
+    //edit Button eventlistener
+    mainTasksDiv.addEventListener('click', function (e) {
+        if (e.target.classList.contains('edit-img')){
+            main.classList.add('blur')
+        }
+    })
+
+
+    mainTasksDiv.addEventListener('mouseover', () => {toggleTasks()})
+    
 
 
     //Functions
@@ -47,9 +64,9 @@ export function task(){
             detailsDiv.append(dueDatePTag)
             //Adding Urgency
             let taskUrgency = document.createElement('p')
-            taskUrgency.classList.add('task-urgency')
+            taskUrgency.innerHTML = task.urgency
             detailsDiv.append(taskUrgency)
-            taskUrgency.innerHtml = urgency.value
+            taskUrgency.classList.add('task-urgency')
             //Adding the delete image
             let deleteBtnImg = document.createElement('img')
             deleteBtnImg.src = deleteImage
@@ -91,7 +108,24 @@ export function task(){
     }) 
     }
 
-    console.log('Hi')
+    function toggleTasks(){
+        let tasks = mainTasksDiv.children;
+        for (let i = 0; i<tasks.length; i++){
+            let task = tasks[i];
+            console.log(task)
+            task.onclick = () => {
+               removeTaskSelectedClass()
+               task.classList.add("task-selected")
+            }    
+        } 
+    }
+
+    function blurActive(){
+        let blur = document.querySelector('.blur')
+        blur.classList.toggle('active')
+    }
+
+   
 
 
 

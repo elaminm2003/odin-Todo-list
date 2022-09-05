@@ -16,22 +16,18 @@ let tasksSection = document.querySelector('.to-dos')
 //EventListerners
 createFolderBtn.addEventListener('click', () => {appendNewFolder()})
 mainFolderDiv.addEventListener('mouseover', () => {toggleFolders()})
+mainFolderDiv.addEventListener('click', function (e) {
+    if (e.target.classList.contains('delete-img')){
+        e.target.parentElement.remove()
+    }
+})
 
-deleteBtnImg.addEventListener('click', () => {deleteFolder()})
 window.onload = function(){
     setInterval(task(), 1000);
  };
 
-// tasksSection.addEventListener('mouseover', () => {
-//     task()
-// })
 
-
-
-
-
-
-//Functions
+ //Functions
 function appendNewFolder(){
     if (folderName.value === '') {
         alert('The folder must have a name')
@@ -53,19 +49,6 @@ function appendNewFolder(){
         newFolderDiv.append(deleteBtnImg) 
 }
 }
-
-function deleteFolder(){
-    let folders = mainFolderDiv.children;
-    for (let i = 0; i<folders.length; i++){
-        let folder = folders[i];
-        let deleteImg = folder.lastChild
-         deleteImg.onclick = () => {
-             folder.remove()
-         }
-}}
-
-
-
 
 
 function toggleFolders(){

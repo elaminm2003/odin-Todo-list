@@ -140,6 +140,12 @@ input{
     margin: 15px;
 }
 
+.add-todos{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 15px;
+}
+
 
 .todobtn{
     border: none;
@@ -258,6 +264,11 @@ button{
     text-align: left;
 }
 
+.task-name-div{
+    margin: auto 0;
+    text-align: left;
+}
+
 .task-delete-img{
     margin: auto 5px;
     display: block;
@@ -291,6 +302,20 @@ button{
 
 .blur{
     filter: blur(12px);
+}
+
+.hidden{
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 60%; /* Full width (cover the whole page) */
+    height: 50%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 1; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;  
 }
 
 
